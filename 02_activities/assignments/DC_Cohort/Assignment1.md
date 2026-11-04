@@ -209,5 +209,11 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+One value system in the databses that I encounter in my day-to-day life is gender. This is mentioned briefly in the reading as well but gender is often coded as binary term, and although some changes have been made, not enough efforts have been put in. The issue with this lies not in the technicality or the difficulty of implementing the change, as there are plenty of variables that can freely take inputs such as height etc, but it's more the resistant to these kinds of changes.
+
+I think with gender, it's often confused with terms like sex, or sex assigned at birth etc. Each of these serves a different function and are defined differently, such as either based on social or biological definitions. Therefore, it is important that these words are used carefully. This is especially applicable to me as some of the work in my lab works with transgender individuals, and they often come in with frustrations surrounding this issue. It's especially noticeable in the medical field, where they feel a lack of respect for their identity. This then leads to larger problems such as their unwillingness to visit the hospital and their distrust in the health system.
+
+I think with all of these problems, there should be a greater emphasis on inclusivty, such as providing people with more options or with options like other where they can fill in their own responses. There should also be more effort done to respect people's indentities and privacy, especially since this distrust already exists in some populations.
+
+Overall then, I think databases should take into account the context of each of their questions, including taking responsibility for carefully deciding which categories people can select, which is important as that can in turn support or solidify value systems.
 ```
