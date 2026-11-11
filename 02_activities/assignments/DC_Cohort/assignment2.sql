@@ -154,18 +154,32 @@ HINT: There are a possibly a few ways to do this query, but if you're struggling
 3) Query the second temp table twice, once for the best day, once for the worst day, 
 with a UNION binding them. */
 --QUERY 7
-SELECT product_name,
-       product_size,
-       CASE
-           WHEN INSTR(product_name, '-') > 0
-           THEN TRIM(SUBSTR(
-               product_name,
-               INSTR(product_name, '-') + 1
-           ))
-           ELSE NULL
-       END AS description
-FROM product
-WHERE product_size REGEXP '[0-9]';
+WITH daily_sales AS (
+    SELECT market_date,
+           SUM(quantity * cost_per_quantity) AS total_sales
+    FROM customer_purchases
+    GROUP BY market_date
+),
+ranked_sales AS (
+    SELECT market_date,
+           total_sales,
+           RANK() OVER (
+               ORDER BY total_sales DESC
+           ) AS best_day,
+           RANK() OVER (
+               ORDER BY total_sales ASC
+           ) AS worst_day
+    FROM daily_sales
+)
+SELECT market_date, total_sales
+FROM ranked_sales
+WHERE best_day = 1
+
+UNION
+
+SELECT market_date, total_sales
+FROM ranked_sales
+WHERE worst_day = 1;
 
 
 
