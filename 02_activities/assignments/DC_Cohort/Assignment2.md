@@ -57,7 +57,11 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Architecture 1: the CUSTOMER_ADDRESS table will have columns of customer_id, street_address, city, province, country, and postal_code. 
+For this, the address will be replaced and overwritten if the customer address changes, so only one address remains. This is type 1
+
+Architecture 2: the CUSTOMER_ADDRESS table will have the same columns of customer_id, street_address, city, province, country, and postal_code, except now there will also be a address duration column that has the date of each address.
+Each time the customer changes address the old address will be retained, the duration will be added, and a new column will be created with the new address. Therefore, the address history is saved. This is type 2
 ```
 
 ***
@@ -193,5 +197,8 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 
 ```
-Your thoughts...
+One ethical issue that's important for this story is the concepts of labour. The author starts by mentioning her story of sewing a pair of pajama pants as a kid and goes on to show her appreciation and recognition that all of her clothing items and made by people. She doesn't go into detail on this concept in terms of AI training, but all of these databases that are used involve manual labour that is sometimes not recognized. The author addresses this point at the end when she mentioned that "as with all things related to high techonology (and swing), they're starting by hand". 
+Another issue that is important to this story is bias, which is discussed in more detail and specifically here, it's related to the patterns in databases that are then fed to AI. These databases have labels created by people, so AI while training can then develop bias and repeat the stereotypes that humans have. There has been some efforts to resolve this however, as the article memtions that ImageNet is identifying fairness issues and carrying on with solutions to remove offensive terms and rebalance the images.
+One last issue that's important to this story is the large language (LLM) proliferation issue. There are some commonalities with issues on image databases such as bias, which is that the words and categorizations used can carry misinformation. An example given in the article is that the database calls pizza and pizza pie the same, but who decided this? With the development of AI being so quick, it's important to make sure that the information being fed into it is better checked. There's also the similar issue of unrecognized labour, such as graduate students of Francis, who developed Brown Corpus, is not recognized anywhere.
+
 ```
